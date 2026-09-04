@@ -1573,10 +1573,13 @@ section:not(#hero) {
   background: var(--bg-card);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: 2.25rem;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .form-group {
@@ -1720,42 +1723,42 @@ section:not(#hero) {
 
 /* Direct Email Actions */
 .direct-mail-banner {
-  margin-bottom: 1.5rem;
-  padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.04);
+  margin-bottom: 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-md);
 }
 
 .direct-mail-banner-title {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.65rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .direct-mail-banner-desc {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .direct-mail-btn-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .btn-mail-action {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.15rem;
-  font-size: 0.85rem;
+  gap: 0.6rem;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: var(--radius-pill);
   text-decoration: none;
