@@ -1,192 +1,1156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Khayoon - Full Stack Developer specializing in Android development, web design, and AI model building">
-    <title>Khayoon - Full Stack Developer</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khayoon - Full Stack Developer specializing in Android development, web design, and AI model building">
+  <meta property="og:title" content="Khayoon - Full Stack Developer">
+  <meta property="og:description" content="Khayoon - Full Stack Developer specializing in Android development, web design, and AI model building">
+  <meta property="og:type" content="website">
+  <meta name="author" content="Khayoon Alaayedi">
+  <title>Khayoon - Full Stack Developer</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="profile-image">
-                        <img src="assets/Khayoon.jpg" alt="Khayoon - Full Stack Developer Profile Picture">
-                    </div>
-                    <h1 class="name">Khayoon</h1>
-                    <p class="role">Full Stack Developer</p>
-                    <p class="summary">
-                        I am a passionate Full Stack Developer with hands-on experience in Android application development, web design, and AI model building. My background combines business management and accounting with technical expertise, offering a multidisciplinary approach to software development. I am deeply fascinated by space and physics and eager to advance in UAV and aerospace technology.
-                    </p>
-                    <p class="location">Baghdad</p>
-                </div>
+  <!-- Fixed Three.js WebGL Canvas Background -->
+  <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Drawer Backdrop Overlay -->
+  <div id="nav-overlay" class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- Slide-in Hamburger Navigation Drawer -->
+  <aside id="nav-drawer" class="nav-drawer" aria-label="Main Navigation Drawer">
+    <div class="nav-drawer-header">
+      <span class="nav-drawer-title">Navigation Index</span>
+      <button id="nav-close" class="nav-close-btn" aria-label="Close Navigation Drawer">&times;</button>
+    </div>
+
+    <nav>
+      <ul class="nav-drawer-list">
+        <li><a href="#hero" class="nav-drawer-link is-active"><span class="num">01</span><span>Overview</span></a></li>
+        <li><a href="#about" class="nav-drawer-link"><span class="num">02</span><span>About & Pillars</span></a></li>
+        <li><a href="#education" class="nav-drawer-link"><span class="num">03</span><span>Education Journey</span></a></li>
+        <li><a href="#experience" class="nav-drawer-link"><span class="num">04</span><span>Leadership & Experience</span></a></li>
+        <li><a href="#skills" class="nav-drawer-link"><span class="num">05</span><span>Technical Skills</span></a></li>
+        <li><a href="#projects" class="nav-drawer-link"><span class="num">06</span><span>Featured Projects</span></a></li>
+        <li><a href="#space" class="nav-drawer-link"><span class="num">07</span><span>Space & Astronomy</span></a></li>
+        <li><a href="#impact" class="nav-drawer-link"><span class="num">08</span><span>Climate & Social Impact</span></a></li>
+        <li><a href="#achievements" class="nav-drawer-link"><span class="num">09</span><span>Achievements & Certs</span></a></li>
+        <li><a href="#contact" class="nav-drawer-link"><span class="num">10</span><span>Secure Contact</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-drawer-footer">
+      <p class="drawer-social-title">Official Channels</p>
+      <div class="drawer-social-grid">
+        <a href="https://www.linkedin.com/in/khayoon-a-6ab9482a3/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+          <img src="assets/linkedin.svg" alt="LinkedIn" width="18" height="18">
+        </a>
+        <a href="https://github.com/khion213" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Repositories">
+          <img src="assets/github.svg" alt="GitHub" width="18" height="18">
+        </a>
+        <a href="https://www.instagram.com/khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram Profile">
+          <img src="assets/instagram.svg" alt="Instagram" width="18" height="18">
+        </a>
+        <a href="https://www.youtube.com/@Khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube Channel">
+          <img src="assets/youtube.svg" alt="YouTube" width="18" height="18">
+        </a>
+        <a href="https://www.tiktok.com/@khayoon.alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok Profile">
+          <img src="assets/tiktok.svg" alt="TikTok" width="18" height="18">
+        </a>
+        <a href="https://www.threads.com/@khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Threads Profile">
+          <img src="assets/threads.svg" alt="Threads" width="18" height="18">
+        </a>
+        <a href="https://www.facebook.com/Khayoon.2050" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook Profile">
+          <img src="assets/facebook.svg" alt="Facebook" width="18" height="18">
+        </a>
+        <a href="https://t.me/khayoon2050" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Telegram Channel">
+          <img src="assets/telegram.svg" alt="Telegram" width="18" height="18">
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Glassmorphic Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <div class="brand-wrapper">
+        <a href="#hero" class="brand-logo" id="header-brand-link">
+          <span class="brand-dot"></span>
+          <span>KHAYOON ALAAYEDI</span>
+        </a>
+        <span class="brand-tag" id="current-chapter-title">Overview</span>
+      </div>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#about" class="nav-bar-link">About</a>
+        <a href="#education" class="nav-bar-link">Education</a>
+        <a href="#experience" class="nav-bar-link">Leadership</a>
+        <a href="#skills" class="nav-bar-link">Skills</a>
+        <a href="#projects" class="nav-bar-link">Projects</a>
+        <a href="#space" class="nav-bar-link">Space</a>
+        <a href="#impact" class="nav-bar-link">Impact</a>
+        <a href="#achievements" class="nav-bar-link">Achievements</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="btn-header-contact" id="btn-header-contact">Get in Touch</a>
+        <button id="nav-toggle" class="nav-toggle-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layer -->
+  <main class="content-layer">
+
+    <!-- 01. Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-text-content">
+            <div class="hero-meta-pill">
+              <span class="hero-meta-dot"></span>
+              <span>Baghdad, Iraq &middot; Active in Space, AI &amp; Climate</span>
             </div>
-        </section>
+            <h1 class="hero-name">Khayoon Alaayedi</h1>
+            <p class="hero-headline">Space Technology &amp; AI Advocate | Environmental &amp; Climate Activist | Technology Community Leader</p>
+            <p class="hero-summary">
+              Multidisciplinary technology and community leader combining hands-on software development (Kotlin, Python, Flask) with space engineering, climate advocacy, and international youth leadership. Co-founder of scientific committees, TEDx speaker, and regional IAU hackathon organizer.
+            </p>
 
-        <!-- Projects Section -->
-        <section class="projects" id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <h3>Calculator App</h3>
-                        <p>A simple and efficient calculator app built with Kotlin and Jetpack Compose. Supports basic arithmetic operations with a modern and intuitive UI.</p>
-                        <a href="https://github.com/khion213/Calculator-App" target="_blank" rel="noopener noreferrer" class="project-link">
-                            View on GitHub
-                        </a>
-                    </article>
-                    
-                    <article class="project-card">
-                        <h3>ATM Website</h3>
-                        <p>An interactive ATM simulation built with Python and Streamlit. Provides a user-friendly interface for balance inquiries, withdrawals, and deposits.</p>
-                        <a href="https://github.com/khion213/ATM-WEBSITE" target="_blank" rel="noopener noreferrer" class="project-link">
-                            View on GitHub
-                        </a>
-                    </article>
-                    
-                    <article class="project-card">
-                        <h3>James Webb Website</h3>
-                        <p>A static site about the James Webb Space Telescope and eight iconic images, built with HTML and CSS.</p>
-                        <a href="https://github.com/khion213/JAMES-WEBB-WEBSITE" target="_blank" rel="noopener noreferrer" class="project-link">
-                            View on GitHub
-                        </a>
-                    </article>
-                </div>
-                <div class="more-projects">
-                    <a href="https://github.com/khion213" target="_blank" rel="noopener noreferrer" class="more-projects-link">
-                        For more projects, click here
-                    </a>
-                </div>
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn-primary" id="hero-cta-projects">Explore My Work &rarr;</a>
+              <a href="#contact" class="btn-secondary" id="hero-cta-contact">Get in Touch</a>
             </div>
-        </section>
 
-        <!-- Education Section -->
-        <section class="education" id="education">
-            <div class="container">
-                <h2>Education</h2>
-                <div class="education-list">
-                    <div class="education-item">
-                        <h3>Aerospace and Unmanned Aerial Vehicles Engineering</h3>
-                        <p class="institution">Baghdad</p>
-                        <p class="status">Currently studying</p>
-                    </div>
-                    
-                    <div class="education-item">
-                        <h3>Business Administration</h3>
-                        <p class="institution">University of the People, California, USA</p>
-                    </div>
-                    
-                    <div class="education-item">
-                        <h3>Diploma in IT</h3>
-                        <p class="institution">CIS Lebanon</p>
-                    </div>
+            <!-- Social Media Icons (8 official verified platforms) -->
+            <div class="hero-socials" id="hero-social-links">
+              <a href="https://www.linkedin.com/in/khayoon-a-6ab9482a3/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+                <img src="assets/linkedin.svg" alt="LinkedIn" width="18" height="18">
+              </a>
+              <a href="https://github.com/khion213" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub Profile" aria-label="GitHub Profile">
+                <img src="assets/github.svg" alt="GitHub" width="18" height="18">
+              </a>
+              <a href="https://www.instagram.com/khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram Profile" aria-label="Instagram Profile">
+                <img src="assets/instagram.svg" alt="Instagram" width="18" height="18">
+              </a>
+              <a href="https://www.youtube.com/@Khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="YouTube Channel" aria-label="YouTube Channel">
+                <img src="assets/youtube.svg" alt="YouTube" width="18" height="18">
+              </a>
+              <a href="https://www.tiktok.com/@khayoon.alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="TikTok Profile" aria-label="TikTok Profile">
+                <img src="assets/tiktok.svg" alt="TikTok" width="18" height="18">
+              </a>
+              <a href="https://www.threads.com/@khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Threads Profile" aria-label="Threads Profile">
+                <img src="assets/threads.svg" alt="Threads" width="18" height="18">
+              </a>
+              <a href="https://www.facebook.com/Khayoon.2050" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Facebook Profile" aria-label="Facebook Profile">
+                <img src="assets/facebook.svg" alt="Facebook" width="18" height="18">
+              </a>
+              <a href="https://t.me/khayoon2050" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Telegram Profile" aria-label="Telegram Profile">
+                <img src="assets/telegram.svg" alt="Telegram" width="18" height="18">
+              </a>
+            </div>
+          </div>
+
+          <!-- Profile Portrait Card -->
+          <div class="profile-card-wrapper">
+            <div class="profile-card">
+              <div class="profile-img-container">
+                <img id="profile-avatar-img" src="assets/khayoon.png" alt="Khayoon Alaayedi - Space Technology & AI Advocate" onerror="this.onerror=null; this.src='assets/Khayoon.jpg';">
+              </div>
+              <div class="profile-card-footer">
+                <div class="profile-coords">
+                  <span>33.3152&deg; N, 44.3661&deg; E</span>
                 </div>
+                <span>BAGHDAD, IRAQ</span>
+              </div>
             </div>
-        </section>
-
-        <!-- Certificates Section -->
-        <section class="certificates" id="certificates">
-            <div class="container">
-                <h2>Achievements & Certifications</h2>
-                <div class="certificates-grid">
-                    <div class="certificate-item">Meta Android Developer Certificate</div>
-                    <div class="certificate-item">Meta Android UI Development Certificate</div>
-                    <div class="certificate-item">Meta Front-End Developer Certificate</div>
-                    <div class="certificate-item">Social Media Marketing by Meta</div>
-                    <div class="certificate-item">IBM AI Engineering Certificate</div>
-                    <div class="certificate-item">University of Washington – Business English Communication Skills</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="skills" id="skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Kotlin</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Mobile Development</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Jetpack Compose</span>
-                            <span class="skill-tag">MVVM Architecture</span>
-                            <span class="skill-tag">Room Database</span>
-                            <span class="skill-tag">Firebase</span>
-                            <span class="skill-tag">UI/UX Design</span>
-                            <span class="skill-tag">React Native</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Web Development</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">Streamlit</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Frontend & Backend Integration</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>AI & ML (Basic)</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">TensorFlow</span>
-                            <span class="skill-tag">PyTorch</span>
-                            <span class="skill-tag">Python</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Tools</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">GitHub</span>
-                            <span class="skill-tag">Version Control</span>
-                            <span class="skill-tag">Clean Code Practices</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer / Contact Section -->
-    <footer class="contact" id="contact">
-        <div class="container">
-            <h2>Connect with me</h2>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/khayoon-a-6ab9482a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
-                    <img src="assets/linkedin.svg" alt="LinkedIn" class="social-icon">
-                </a>
-                <a href="https://github.com/khion213" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
-                    <img src="assets/github.svg" alt="GitHub" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/khayoon_alfayyadh?igsh=MTN5d3JjbHN4bWVuaA==" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram Profile">
-                    <img src="assets/instagram.svg" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.facebook.com/share/19MnAJMSd7/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook Profile">
-                    <img src="assets/facebook.svg" alt="Facebook" class="social-icon">
-                </a>
-                <a href="#" class="social-link" aria-label="Telegram Profile (Coming Soon)">
-                    <img src="assets/telegram.svg" alt="Telegram" class="social-icon">
-                </a>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+
+    <!-- 02. About & Multidisciplinary Identity -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-eyebrow">Professional Profile</span>
+          <h2 class="section-title">Bridging Technology, Aerospace &amp; Global Impact</h2>
+          <p class="section-subtitle">
+            Operating at the intersection of computational engineering, space systems, and environmental leadership to empower communities and advance scientific discovery.
+          </p>
+        </div>
+
+        <div class="about-summary-box reveal-on-scroll">
+          <p class="about-summary-text">
+            Multidisciplinary technology and community leader based in Baghdad, Iraq, with a background spanning business administration, computer science, and space engineering. An active environmental advocate in Iraq, engaged in climate-action initiatives as a founder and president of scientific committees, a TEDx speaker, and a regional hackathon organizer working with the International Astronomical Union. Combines hands-on software development (Kotlin, Python, Flask) with public speaking, project leadership, and collaboration with UN agencies and Iraqi government ministries on environmental and climate programs. Currently expanding expertise in artificial intelligence, remote sensing, and citizen science.
+          </p>
+        </div>
+
+        <!-- 4 Core Pillars -->
+        <div class="pillars-grid">
+          <article class="pillar-card reveal-on-scroll">
+            <div class="pillar-header">
+              <div class="pillar-icon-box">&#x25CE;</div>
+              <h3 class="pillar-title">Space &amp; Astronomy</h3>
+            </div>
+            <p class="pillar-desc">
+              Space technology &amp; UAV engineering student, IAU Hack4Dev regional coordinator, and NASA Space Apps Galactic Problem Solver.
+            </p>
+          </article>
+
+          <article class="pillar-card reveal-on-scroll">
+            <div class="pillar-header">
+              <div class="pillar-icon-box">&#x2699;</div>
+              <h3 class="pillar-title">Artificial Intelligence</h3>
+            </div>
+            <p class="pillar-desc">
+              President of Standing Committee on AI, Astronomy &amp; Space, IBM AI Engineering certified, leveraging satellite remote sensing and machine learning.
+            </p>
+          </article>
+
+          <article class="pillar-card reveal-on-scroll">
+            <div class="pillar-header">
+              <div class="pillar-icon-box">&#x25C9;</div>
+              <h3 class="pillar-title">Climate &amp; Sustainability</h3>
+            </div>
+            <p class="pillar-desc">
+              Selected in Oxford Net Zero GYCT (top cohort from 6,000+ applicants), and UNICEF-backed National Climate Action Group representative.
+            </p>
+          </article>
+
+          <article class="pillar-card reveal-on-scroll">
+            <div class="pillar-header">
+              <div class="pillar-icon-box">&#x3C;/&#x3E;</div>
+              <h3 class="pillar-title">Software Engineering</h3>
+            </div>
+            <p class="pillar-desc">
+              Hands-on software developer building mobile Android applications (Kotlin, Compose) and full-stack web architectures (Python, Flask).
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. Education Journey -->
+    <section class="education" id="education">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-eyebrow">Academic Progression</span>
+          <h2 class="section-title">Education &amp; Scientific Grounding</h2>
+          <p class="section-subtitle">
+            An interdisciplinary academic foundation combining computer science, aerospace engineering, and international business management.
+          </p>
+        </div>
+
+        <div class="education-timeline">
+          <!-- Item 1 -->
+          <div class="edu-card-wrapper reveal-on-scroll">
+            <div class="edu-node-point"></div>
+            <div class="edu-card">
+              <span class="edu-period-badge">Currently Studying &middot; Degree</span>
+              <h3 class="edu-degree">Bachelor of Science in Computer Science</h3>
+              <p class="edu-institution">University of the People &mdash; California, USA</p>
+              <p class="edu-details">Focusing on algorithms, distributed software design, data structures, and computational theory.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="edu-card-wrapper reveal-on-scroll">
+            <div class="edu-node-point"></div>
+            <div class="edu-card">
+              <span class="edu-period-badge">Currently Studying &middot; Engineering</span>
+              <h3 class="edu-degree">Bachelor of Engineering in Space Technology &amp; UAV Engineering</h3>
+              <p class="edu-institution">Middle Technical University &mdash; Electrical Engineering Technical College, Iraq</p>
+              <p class="edu-details">Specializing in spacecraft subsystems, orbital mechanics, unmanned aerial vehicle dynamics, and aerospace avionics.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="edu-card-wrapper reveal-on-scroll">
+            <div class="edu-node-point"></div>
+            <div class="edu-card">
+              <span class="edu-period-badge">Graduated 2026 &middot; Degree</span>
+              <h3 class="edu-degree">Bachelor of Science in Business Administration</h3>
+              <p class="edu-institution">University of the People &mdash; California, USA</p>
+              <p class="edu-details">Grounded in organizational management, global operations, strategic finance, and technology venture governance.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="edu-card-wrapper reveal-on-scroll">
+            <div class="edu-node-point"></div>
+            <div class="edu-card">
+              <span class="edu-period-badge">Graduated 2025 &middot; Diploma</span>
+              <h3 class="edu-degree">IT Diploma</h3>
+              <p class="edu-institution">Institute CIS &mdash; Lebanon</p>
+              <p class="edu-details">Comprehensive training in computer networking, systems administration, information security, and software fundamentals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Experience & Leadership Roles -->
+    <section class="experience" id="experience">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-eyebrow">Leadership &amp; Experience</span>
+          <h2 class="section-title">Organizational Leadership &amp; Initiatives</h2>
+          <p class="section-subtitle">
+            Verified executive, community, and international roles spearheading scientific development, climate diplomacy, and technological education.
+          </p>
+        </div>
+
+        <div class="leadership-grid">
+          <!-- Role 1 -->
+          <article class="leadership-card reveal-on-scroll">
+            <div class="leadership-meta">
+              <span class="leadership-tag">Executive Leadership</span>
+              <span class="leadership-period">2026 &ndash; Present</span>
+            </div>
+            <h3 class="leadership-role">Co-Founder &amp; President</h3>
+            <p class="leadership-org">Standing Committee on AI, Astronomy and Space</p>
+            <p class="leadership-entity">Together Association for Human and Environment Protection, Iraq</p>
+            <p class="leadership-desc">
+              Co-founded and currently lead the committee, overseeing initiatives, partnerships, and educational programs advancing artificial intelligence, astronomy, and space science across Iraq.
+            </p>
+          </article>
+
+          <!-- Role 2 -->
+          <article class="leadership-card reveal-on-scroll">
+            <div class="leadership-meta">
+              <span class="leadership-tag">Founder</span>
+              <span class="leadership-period">2026 &ndash; Present</span>
+            </div>
+            <h3 class="leadership-role">Founder</h3>
+            <p class="leadership-org">HOPE Canopus Scientific Team</p>
+            <p class="leadership-entity">Scientific Initiative</p>
+            <p class="leadership-desc">
+              Founded and lead a scientific initiative focused on astronomy, space technology, youth scientific engagement, and observational research.
+            </p>
+          </article>
+
+          <!-- Role 3 -->
+          <article class="leadership-card reveal-on-scroll">
+            <div class="leadership-meta">
+              <span class="leadership-tag">International Organization</span>
+              <span class="leadership-period">2026</span>
+            </div>
+            <h3 class="leadership-role">Regional Organizer</h3>
+            <p class="leadership-org">Hack4Dev Data Science Hackathon</p>
+            <p class="leadership-entity">International Astronomical Union (IAU) Office of Astronomy for Development</p>
+            <p class="leadership-desc">
+              Organized and coordinated a regional data science hackathon under Hack4Dev, a flagship program of the IAU Office of Astronomy for Development empowering youth through space data.
+            </p>
+          </article>
+
+          <!-- Role 4 -->
+          <article class="leadership-card reveal-on-scroll">
+            <div class="leadership-meta">
+              <span class="leadership-tag">UN &amp; Government</span>
+              <span class="leadership-period">2026 &ndash; 2027</span>
+            </div>
+            <h3 class="leadership-role">Representative, Baghdad Governorate</h3>
+            <p class="leadership-org">National Climate Action Group</p>
+            <p class="leadership-entity">Supported by UNICEF, Iraqi Ministry of Environment &amp; Ministry of Youth and Sports</p>
+            <p class="leadership-desc">
+              Represent Baghdad Governorate in a national climate-action working group supported by UNICEF and Iraqi government ministries to formulate youth climate resilience strategies.
+            </p>
+          </article>
+
+          <!-- Role 5 -->
+          <article class="leadership-card reveal-on-scroll">
+            <div class="leadership-meta">
+              <span class="leadership-tag">Global Fellowship</span>
+              <span class="leadership-period">2026</span>
+            </div>
+            <h3 class="leadership-role">Selected Participant</h3>
+            <p class="leadership-org">Global Youth Climate Training Program (GYCT)</p>
+            <p class="leadership-entity">Global Youth Coalition, with Smith School &amp; Oxford Net Zero, University of Oxford</p>
+            <p class="leadership-desc">
+              Selected through a competitive worldwide evaluation among more than 6,000 applicants to participate in the prestigious 2026 Oxford Net Zero climate diplomacy and policy cohort.
+            </p>
+          </article>
+
+          <!-- Role 6 -->
+          <article class="leadership-card reveal-on-scroll">
+            <div class="leadership-meta">
+              <span class="leadership-tag">Ambassadorship</span>
+              <span class="leadership-period">2026</span>
+            </div>
+            <h3 class="leadership-role">University Ambassador</h3>
+            <p class="leadership-org">Aspire Leaders Program</p>
+            <p class="leadership-entity">Aspire Institute (Founded at Harvard)</p>
+            <p class="leadership-desc">
+              Represented the Aspire Leaders Program in Iraq, supporting student outreach, mentoring first-generation leaders, and spearheading leadership initiatives.
+            </p>
+          </article>
+
+          <!-- Role 7 -->
+          <article class="leadership-card reveal-on-scroll">
+            <div class="leadership-meta">
+              <span class="leadership-tag">Public Speaking</span>
+              <span class="leadership-period">2026</span>
+            </div>
+            <h3 class="leadership-role">Core Team Member &amp; Speaker</h3>
+            <p class="leadership-org">TEDx University of Technology Iraq</p>
+            <p class="leadership-entity">TEDx Program</p>
+            <p class="leadership-desc">
+              Served on the core organizing team and delivered a TEDx talk on technology, innovation, and youth empowerment in Iraq.
+            </p>
+          </article>
+
+          <!-- Role 8 -->
+          <article class="leadership-card reveal-on-scroll">
+            <div class="leadership-meta">
+              <span class="leadership-tag">Keynote Speaker</span>
+              <span class="leadership-period">2026</span>
+            </div>
+            <h3 class="leadership-role">Speaker</h3>
+            <p class="leadership-org">Iraqi Youth Summit</p>
+            <p class="leadership-entity">National Summit</p>
+            <p class="leadership-desc">
+              Invited speaker addressing technology, space opportunities, and youth innovation in emerging scientific disciplines.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. Technical Skills Matrix -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-eyebrow">Capabilities &amp; Stack</span>
+          <h2 class="section-title">Technical Expertise &amp; Methodologies</h2>
+          <p class="section-subtitle">
+            Structured competency across software engineering, native mobile platforms, applied AI, space science, and executive communication.
+          </p>
+        </div>
+
+        <div class="skills-matrix">
+          <!-- Cat 1 -->
+          <div class="skill-category-card reveal-on-scroll">
+            <h3 class="skill-cat-title">Programming Languages</h3>
+            <p class="skill-cat-desc">Core languages used for native mobile, systems, and full-stack development.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip">Kotlin</span>
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">C++</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">HTML5</span>
+              <span class="skill-chip">CSS3</span>
+            </div>
+          </div>
+
+          <!-- Cat 2 -->
+          <div class="skill-category-card reveal-on-scroll">
+            <h3 class="skill-cat-title">Mobile Application Development</h3>
+            <p class="skill-cat-desc">Modern native Android architectures with declarative UI and offline-first data.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip">Android Development</span>
+              <span class="skill-chip">Jetpack Compose</span>
+              <span class="skill-chip">MVVM Architecture</span>
+              <span class="skill-chip">Room Database</span>
+              <span class="skill-chip">Firebase</span>
+              <span class="skill-chip">Material Design</span>
+              <span class="skill-chip">Responsive UI/UX</span>
+            </div>
+          </div>
+
+          <!-- Cat 3 -->
+          <div class="skill-category-card reveal-on-scroll">
+            <h3 class="skill-cat-title">Web &amp; Backend Systems</h3>
+            <p class="skill-cat-desc">Lightweight web services, interactive data simulations, and API integrations.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip">Flask</span>
+              <span class="skill-chip">Streamlit</span>
+              <span class="skill-chip">Frontend &amp; Backend</span>
+              <span class="skill-chip">REST API Integration</span>
+              <span class="skill-chip">Web App Deployment</span>
+            </div>
+          </div>
+
+          <!-- Cat 4 -->
+          <div class="skill-category-card reveal-on-scroll">
+            <h3 class="skill-cat-title">Artificial Intelligence &amp; Data</h3>
+            <p class="skill-cat-desc">Machine learning pipelines, AI applications integration, and data modeling.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip">Python for AI</span>
+              <span class="skill-chip">TensorFlow</span>
+              <span class="skill-chip">PyTorch</span>
+              <span class="skill-chip">ML Fundamentals</span>
+              <span class="skill-chip">AI Applications Integration</span>
+            </div>
+          </div>
+
+          <!-- Cat 5 -->
+          <div class="skill-category-card reveal-on-scroll">
+            <h3 class="skill-cat-title">Space Science &amp; Remote Sensing</h3>
+            <p class="skill-cat-desc">Orbital tracking concepts, satellite earth observation, and citizen science.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip">Satellite Earth Observation (NASA ARSET)</span>
+              <span class="skill-chip">Citizen Science Methods</span>
+              <span class="skill-chip">Remote Sensing Analysis</span>
+              <span class="skill-chip">Astronomical Datasets</span>
+            </div>
+          </div>
+
+          <!-- Cat 6 -->
+          <div class="skill-category-card reveal-on-scroll">
+            <h3 class="skill-cat-title">Software Engineering &amp; Tools</h3>
+            <p class="skill-cat-desc">Disciplined engineering practices, toolchains, and collaborative development.</p>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip">OOP</span>
+              <span class="skill-chip">Clean Architecture</span>
+              <span class="skill-chip">Git &amp; GitHub</span>
+              <span class="skill-chip">VS Code</span>
+              <span class="skill-chip">Android Studio</span>
+              <span class="skill-chip">IntelliJ IDEA</span>
+              <span class="skill-chip">Software Testing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. Technical Projects Showcase -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-eyebrow">Engineering Showcase</span>
+          <h2 class="section-title">Technical Projects</h2>
+          <p class="section-subtitle">
+            A selection of software applications, web platforms, and space-related computational tools built with clean code and intuitive design.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card reveal-on-scroll">
+            <div class="project-header-meta">
+              <span class="project-badge">Android &middot; Compose</span>
+            </div>
+            <h3 class="project-title">Calculator App</h3>
+            <p class="project-desc">
+              A modern Android calculator application built with Kotlin and Jetpack Compose. Features dynamic UI color transitions synchronized with each button press, tactile feedback, and arithmetic logic with clean MVVM separation.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-tag">Kotlin</span>
+              <span class="tech-tag">Jetpack Compose</span>
+              <span class="tech-tag">MVVM</span>
+              <span class="tech-tag">Dynamic UI</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/khion213/Calculator-App" target="_blank" rel="noopener noreferrer" class="project-action-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal-on-scroll">
+            <div class="project-header-meta">
+              <span class="project-badge">Python &middot; Web</span>
+            </div>
+            <h3 class="project-title">ATM Website &amp; Simulation</h3>
+            <p class="project-desc">
+              An interactive, authenticated banking ATM simulation crafted with Python and Streamlit. Implements secure balance inquiries, transaction ledgers, cash withdrawals, and deposits with a responsive interface.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">State Management</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/khion213/ATM-WEBSITE" target="_blank" rel="noopener noreferrer" class="project-action-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal-on-scroll">
+            <div class="project-header-meta">
+              <span class="project-badge">Space &middot; Web</span>
+            </div>
+            <h3 class="project-title">James Webb Website</h3>
+            <p class="project-desc">
+              An educational scientific exploration platform detailing the James Webb Space Telescope (JWST). Showcases deep-space imagery, infrared spectrum explanations, telescope optics, and cosmic observatory science.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">JWST Data</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/khion213/JAMES-WEBB-WEBSITE" target="_blank" rel="noopener noreferrer" class="project-action-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card reveal-on-scroll">
+            <div class="project-header-meta">
+              <span class="project-badge">Android Game</span>
+            </div>
+            <h3 class="project-title">Two-Player Tic-Tac-Toe</h3>
+            <p class="project-desc">
+              An interactive multiplayer board game developed using Kotlin and Jetpack Compose. Features state-driven game-loop logic, win-detection algorithms, and fluid UI animations.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-tag">Kotlin</span>
+              <span class="tech-tag">Jetpack Compose</span>
+              <span class="tech-tag">Coroutines</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/khion213" target="_blank" rel="noopener noreferrer" class="project-action-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card reveal-on-scroll">
+            <div class="project-header-meta">
+              <span class="project-badge">Android Productivity</span>
+            </div>
+            <h3 class="project-title">Android Notes App</h3>
+            <p class="project-desc">
+              A comprehensive personal notes and task manager built in Kotlin. Implements full CRUD functionality, offline-first local persistence with Room Database, search filters, and clean architecture.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-tag">Kotlin</span>
+              <span class="tech-tag">Room DB</span>
+              <span class="tech-tag">CRUD</span>
+              <span class="tech-tag">MVVM</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/khion213" target="_blank" rel="noopener noreferrer" class="project-action-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card reveal-on-scroll">
+            <div class="project-header-meta">
+              <span class="project-badge">Creative Web</span>
+            </div>
+            <h3 class="project-title">Khayoon Portfolio Platform</h3>
+            <p class="project-desc">
+              High-performance personal web platform integrating interactive 3D celestial mechanics in Three.js, responsive chapter navigation, dark editorial design, and a server-verified secure contact conduit.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-tag">Three.js</span>
+              <span class="tech-tag">WebGL</span>
+              <span class="tech-tag">Node.js Express</span>
+              <span class="tech-tag">Modern CSS</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/khion213/khayoon-portfolio" target="_blank" rel="noopener noreferrer" class="project-action-link">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="more-projects-box reveal-on-scroll">
+          <a href="https://github.com/khion213" target="_blank" rel="noopener noreferrer" class="more-projects-btn" id="btn-more-projects">
+            <span>Explore All Repositories on GitHub &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. Space & Astronomy Identity -->
+    <section class="space-section" id="space">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-eyebrow">Cosmic Exploration</span>
+          <h2 class="section-title">Space Technology &amp; Astronomy</h2>
+          <p class="section-subtitle">
+            Dedicated engagement in aerospace engineering, NASA programs, astronomical research, and citizen science initiatives.
+          </p>
+        </div>
+
+        <div class="space-identity-grid">
+          <article class="space-card reveal-on-scroll">
+            <span class="space-badge">Degree Program</span>
+            <h3 class="space-card-title">Aerospace &amp; UAV Engineering</h3>
+            <p class="space-card-inst">Middle Technical University</p>
+            <p class="space-card-desc">
+              Pursuing Bachelor of Engineering focusing on satellite subsystems, unmanned aerial vehicles, structural dynamics, and orbital flight software.
+            </p>
+          </article>
+
+          <article class="space-card reveal-on-scroll">
+            <span class="space-badge">Committee Leadership</span>
+            <h3 class="space-card-title">Standing Committee on AI &amp; Space</h3>
+            <p class="space-card-inst">Together Association for Human &amp; Environment Protection</p>
+            <p class="space-card-desc">
+              Presiding over national scientific programming, telescope observation nights, and youth space literacy workshops across Iraq.
+            </p>
+          </article>
+
+          <article class="space-card reveal-on-scroll">
+            <span class="space-badge">Scientific Initiative</span>
+            <h3 class="space-card-title">HOPE Canopus Scientific Team</h3>
+            <p class="space-card-inst">Founder &amp; Lead</p>
+            <p class="space-card-desc">
+              Directing independent youth astronomy expeditions, celestial astrophotography sessions, and scientific outreach initiatives.
+            </p>
+          </article>
+
+          <article class="space-card reveal-on-scroll">
+            <span class="space-badge">International Organization</span>
+            <h3 class="space-card-title">IAU Hack4Dev Hackathon</h3>
+            <p class="space-card-inst">IAU Office of Astronomy for Development</p>
+            <p class="space-card-desc">
+              Regional organizer coordinating data science competitions using real astrophysical datasets to tackle societal challenges.
+            </p>
+          </article>
+
+          <article class="space-card reveal-on-scroll">
+            <span class="space-badge">NASA Training</span>
+            <h3 class="space-card-title">NASA ARSET Earth Observation</h3>
+            <p class="space-card-inst">Applied Remote Sensing Training</p>
+            <p class="space-card-desc">
+              Completed specialized training on satellite remote sensing, multispectral orbital imagery, and environmental tracking from space.
+            </p>
+          </article>
+
+          <article class="space-card reveal-on-scroll">
+            <span class="space-badge">Global Award</span>
+            <h3 class="space-card-title">Galactic Problem Solver</h3>
+            <p class="space-card-inst">NASA International Space Apps Challenge</p>
+            <p class="space-card-desc">
+              Honored with Galactic Problem Solver recognition for engineering innovative solutions using open NASA planetary datasets (Oct 2025).
+            </p>
+          </article>
+
+          <article class="space-card reveal-on-scroll">
+            <span class="space-badge">Citizen Science</span>
+            <h3 class="space-card-title">Black Hole Hunters</h3>
+            <p class="space-card-inst">NASA Zooniverse Program</p>
+            <p class="space-card-desc">
+              Active contributor analyzing gravitational microlensing light curves to discover elusive stellar-mass black holes.
+            </p>
+          </article>
+
+          <article class="space-card reveal-on-scroll">
+            <span class="space-badge">Astrophysics Competition</span>
+            <h3 class="space-card-title">IAAC Global Participant</h3>
+            <p class="space-card-inst">International Astronomy Competition</p>
+            <p class="space-card-desc">
+              Demonstrated analytical mastery in celestial mechanics, astrophysical mathematics, and planetary physics.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08. Climate, Youth & Social Impact -->
+    <section class="impact" id="impact">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-eyebrow">Planetary Stewardship</span>
+          <h2 class="section-title">Climate Action &amp; Youth Leadership</h2>
+          <p class="section-subtitle">
+            Spearheading environmental policy, UN partnerships, and grassroots empowerment to build a resilient and sustainable future.
+          </p>
+        </div>
+
+        <div class="impact-grid">
+          <article class="impact-card reveal-on-scroll">
+            <span class="impact-role-pill">National Working Group</span>
+            <h3 class="impact-title">National Climate Action Group</h3>
+            <p class="impact-entity">Supported by UNICEF, Iraqi Ministry of Environment &amp; Ministry of Youth and Sports</p>
+            <p class="impact-desc">
+              Serving as official Representative for Baghdad Governorate (2026&ndash;2027), formulating youth climate mitigation strategies, water security dialogues, and climate policy advocacy in Iraq.
+            </p>
+          </article>
+
+          <article class="impact-card reveal-on-scroll">
+            <span class="impact-role-pill">Oxford Net Zero Fellowship</span>
+            <h3 class="impact-title">Global Youth Climate Training</h3>
+            <p class="impact-entity">Smith School of Enterprise &amp; Oxford Net Zero, University of Oxford</p>
+            <p class="impact-desc">
+              Selected among more than 6,000 global applicants for the 2026 cohort, undergoing specialized training on climate diplomacy, international UNFCCC negotiations, and net-zero institutional governance.
+            </p>
+          </article>
+
+          <article class="impact-card reveal-on-scroll">
+            <span class="impact-role-pill">United Nations Recognition</span>
+            <h3 class="impact-title">UN Volunteers &mdash; WHO</h3>
+            <p class="impact-entity">World Health Organization (Climate Change &amp; Health / MMPT Project)</p>
+            <p class="impact-desc">
+              Awarded UN Volunteers Certificate of Appreciation (Dec 2025) for volunteer research evaluating climate vulnerability impacts on public health and regional epidemiological indicators.
+            </p>
+          </article>
+
+          <article class="impact-card reveal-on-scroll">
+            <span class="impact-role-pill">United Nations Recognition</span>
+            <h3 class="impact-title">UN Volunteers &mdash; UNFPA</h3>
+            <p class="impact-entity">UNFPA Climate &amp; Health Awareness Campaign</p>
+            <p class="impact-desc">
+              Awarded UN Volunteers Certificate of Appreciation (Sep 2025) for spearheading environmental awareness, sanitation campaigns, and health protection during major community events.
+            </p>
+          </article>
+
+          <article class="impact-card reveal-on-scroll">
+            <span class="impact-role-pill">Community Instruction</span>
+            <h3 class="impact-title">Gateway to Programming Workshop</h3>
+            <p class="impact-entity">Ministry of Youth &amp; Sports, Iraq</p>
+            <p class="impact-desc">
+              Delivered and instructed the youth workshop "Your Gateway to the World of Programming" (2026), receiving an official Letter of Appreciation from the Ministry for public educational service.
+            </p>
+          </article>
+
+          <article class="impact-card reveal-on-scroll">
+            <span class="impact-role-pill">Keynote &amp; Advocacy</span>
+            <h3 class="impact-title">TEDx Speaker &amp; Youth Summit</h3>
+            <p class="impact-entity">TEDx University of Technology Iraq &amp; Iraqi Youth Summit</p>
+            <p class="impact-desc">
+              Delivering public talks inspiring emerging leaders to integrate technical literacy, aerospace sciences, and proactive climate engagement into civic progress.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09. Achievements & Certifications -->
+    <section class="achievements" id="achievements">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-eyebrow">Verified Distinctions</span>
+          <h2 class="section-title">Achievements &amp; Honors</h2>
+          <p class="section-subtitle">
+            Verified international awards, national programming championships, and accredited professional certifications.
+          </p>
+        </div>
+
+        <div class="achievements-grid">
+          <article class="achievement-card reveal-on-scroll">
+            <div class="achieve-header">
+              <span class="achieve-category">International Award</span>
+              <span class="achieve-date">2025</span>
+            </div>
+            <h3 class="achieve-title">Best Learner in Asia &amp; Africa</h3>
+            <p class="achieve-org">Future Skills Academy &mdash; Mohammed bin Rashid Al Maktoum Knowledge Foundation, Dubai</p>
+            <p class="achieve-desc">
+              Honored across two continents for extraordinary academic dedication and mastery in emerging digital skills and technologies.
+            </p>
+          </article>
+
+          <article class="achievement-card reveal-on-scroll">
+            <div class="achieve-header">
+              <span class="achieve-category">National Championship</span>
+              <span class="achieve-date">2025</span>
+            </div>
+            <h3 class="achieve-title">Winner &mdash; National Programming Competition</h3>
+            <p class="achieve-org">Prime Minister's Office of Iraq</p>
+            <p class="achieve-desc">
+              Awarded first place in the nationwide algorithmic and software programming tournament sponsored by the Office of the Prime Minister.
+            </p>
+          </article>
+
+          <article class="achievement-card reveal-on-scroll">
+            <div class="achieve-header">
+              <span class="achieve-category">Space Innovation</span>
+              <span class="achieve-date">Oct 2025</span>
+            </div>
+            <h3 class="achieve-title">Galactic Problem Solver</h3>
+            <p class="achieve-org">NASA International Space Apps Challenge</p>
+            <p class="achieve-desc">
+              Commended for developing multidisciplinary technological solutions addressing NASA global challenge briefs using open celestial telemetry.
+            </p>
+          </article>
+
+          <article class="achievement-card reveal-on-scroll">
+            <div class="achieve-header">
+              <span class="achieve-category">United Nations</span>
+              <span class="achieve-date">Dec 2025</span>
+            </div>
+            <h3 class="achieve-title">UN Volunteers Certificate of Appreciation</h3>
+            <p class="achieve-org">World Health Organization (Climate Change &amp; Health Project)</p>
+            <p class="achieve-desc">
+              Recognized by the UN Volunteers program for contributions to international health monitoring and environmental vulnerability tracking.
+            </p>
+          </article>
+
+          <article class="achievement-card reveal-on-scroll">
+            <div class="achieve-header">
+              <span class="achieve-category">Government Service</span>
+              <span class="achieve-date">2026</span>
+            </div>
+            <h3 class="achieve-title">Letter of Appreciation</h3>
+            <p class="achieve-org">Ministry of Youth &amp; Sports, Iraq</p>
+            <p class="achieve-desc">
+              Officially recognized for designing and delivering the youth computing curriculum "Your Gateway to the World of Programming".
+            </p>
+          </article>
+
+          <article class="achievement-card reveal-on-scroll">
+            <div class="achieve-header">
+              <span class="achieve-category">Civic Recognition</span>
+              <span class="achieve-date">2025</span>
+            </div>
+            <h3 class="achieve-title">Certificate of Appreciation for Volunteer Work</h3>
+            <p class="achieve-org">Bestoon Talk</p>
+            <p class="achieve-desc">
+              Commended for outstanding youth engagement, community education, and non-profit volunteer coordination.
+            </p>
+          </article>
+        </div>
+
+        <!-- Verified Certifications -->
+        <h3 class="certifications-section-header reveal-on-scroll">Accredited Certifications &amp; Training</h3>
+        <div class="certifications-grid">
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">Meta Android Developer Certificate</span>
+            <div class="cert-meta"><span>Meta</span><span>2025</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">IBM AI Engineering Certificate</span>
+            <div class="cert-meta"><span>IBM</span><span>2025</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">Meta Front-End Developer Certificate</span>
+            <div class="cert-meta"><span>Meta</span><span>2025</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">Meta Android UI Development Certificate</span>
+            <div class="cert-meta"><span>Meta</span><span>2025</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">Business English Communication Skills</span>
+            <div class="cert-meta"><span>Univ. of Washington</span><span>2025</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">NASA ARSET Satellite Earth Observation</span>
+            <div class="cert-meta"><span>NASA ARSET</span><span>2025&ndash;2026</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">Meta Social Media Marketing Certificate</span>
+            <div class="cert-meta"><span>Meta</span><span>2026</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">Aspire Leaders Program Certificate</span>
+            <div class="cert-meta"><span>Aspire Institute</span><span>2026</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">Harvard Innovation Labs Certificates</span>
+            <div class="cert-meta"><span>Harvard i-labs</span><span>2026</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">Mahara Program: Graphic Design Careers</span>
+            <div class="cert-meta"><span>Mahara Program</span><span>2026</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">International Astronomy &amp; Astrophysics Competition</span>
+            <div class="cert-meta"><span>IAAC</span><span>Participant</span></div>
+          </div>
+          <div class="certificate-item-card reveal-on-scroll">
+            <span class="cert-name">Black Hole Hunters Citizen Science</span>
+            <div class="cert-meta"><span>NASA Zooniverse</span><span>Participant</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Real Secure Contact Conduit -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="section-eyebrow">Direct Communication</span>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-subtitle">
+            Whether for space initiatives, AI consultations, climate partnerships, or keynote speaking invitations, send a direct, secure inquiry.
+          </p>
+        </div>
+
+        <div class="contact-layout-grid">
+          <!-- Information Column -->
+          <div class="contact-info-panel reveal-on-scroll">
+            <div class="contact-direct-card">
+              <h3 class="contact-card-title">Encrypted Transmission</h3>
+              <p class="contact-card-desc">
+                Your message is securely transmitted directly to Khayoon Alaayedi through a rate-limited and spam-protected API endpoint.
+              </p>
+              <ul class="contact-features-list">
+                <li><span class="dot"></span><span>Executive &amp; technical inquiries welcome</span></li>
+                <li><span class="dot"></span><span>Speaking &amp; conference availability</span></li>
+                <li><span class="dot"></span><span>Research, space tech &amp; climate collaborations</span></li>
+                <li><span class="dot"></span><span>Verified private delivery with inquiry reference tracking</span></li>
+              </ul>
+            </div>
+
+            <!-- Social Media Row in Contact -->
+            <div>
+              <p class="drawer-social-title" style="margin-bottom: 0.75rem;">Verified Digital Profiles</p>
+              <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/khayoon-a-6ab9482a3/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+                  <img src="assets/linkedin.svg" alt="LinkedIn" width="18" height="18">
+                </a>
+                <a href="https://github.com/khion213" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub Profile" aria-label="GitHub Profile">
+                  <img src="assets/github.svg" alt="GitHub" width="18" height="18">
+                </a>
+                <a href="https://www.instagram.com/khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram Profile" aria-label="Instagram Profile">
+                  <img src="assets/instagram.svg" alt="Instagram" width="18" height="18">
+                </a>
+                <a href="https://www.youtube.com/@Khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="YouTube Channel" aria-label="YouTube Channel">
+                  <img src="assets/youtube.svg" alt="YouTube" width="18" height="18">
+                </a>
+                <a href="https://www.tiktok.com/@khayoon.alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="TikTok Profile" aria-label="TikTok Profile">
+                  <img src="assets/tiktok.svg" alt="TikTok" width="18" height="18">
+                </a>
+                <a href="https://www.threads.com/@khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Threads Profile" aria-label="Threads Profile">
+                  <img src="assets/threads.svg" alt="Threads" width="18" height="18">
+                </a>
+                <a href="https://www.facebook.com/Khayoon.2050" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Facebook Profile" aria-label="Facebook Profile">
+                  <img src="assets/facebook.svg" alt="Facebook" width="18" height="18">
+                </a>
+                <a href="https://t.me/khayoon2050" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Telegram Profile" aria-label="Telegram Profile">
+                  <img src="assets/telegram.svg" alt="Telegram" width="18" height="18">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Real Working Contact Form -->
+          <div class="contact-form-card reveal-on-scroll">
+            <!-- Direct Email Conduit Banner -->
+            <div class="direct-mail-banner">
+              <div class="direct-mail-banner-title">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="#ffffff">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <span>Direct Email Dispatch</span>
+              </div>
+              <p class="direct-mail-banner-desc">
+                Contact Khayoon Alaayedi directly at <strong>Khion2002@gmail.com</strong> or choose an action below:
+              </p>
+              <div class="direct-mail-btn-row">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Khion2002@gmail.com&su=Portfolio%20Inquiry%20from%20Website" target="_blank" rel="noopener noreferrer" class="btn-mail-action btn-mail-gmail" id="btn-open-gmail">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+                  <span>Open in Gmail</span>
+                </a>
+                <button type="button" class="btn-mail-action btn-mail-copy" id="btn-copy-email" title="Copy email address">
+                  <span id="copy-email-text">Copy: Khion2002@gmail.com</span>
+                </button>
+              </div>
+            </div>
+
+            <form id="contact-form" novalidate>
+              <!-- Anti-spam Honeypot Field -->
+              <div class="form-honeypot" aria-hidden="true">
+                <label for="website">Website (Leave Blank)</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <!-- Name -->
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name <span class="req">*</span></label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Dr. Jane Doe" required maxlength="100">
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Your Email Address <span class="req">*</span></label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. jane@institution.org" required maxlength="150">
+              </div>
+
+              <!-- Subject -->
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject / Purpose</label>
+                <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="e.g. Space Technology Initiative / Keynote Invitation" maxlength="150">
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message <span class="req">*</span></label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Detail your project, initiative, or inquiry here..." required minlength="10" maxlength="3000"></textarea>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn-submit" id="btn-submit-message">
+                <span class="btn-spinner is-hidden" aria-hidden="true"></span>
+                <span class="btn-label">Send Message &rarr;</span>
+              </button>
+
+              <!-- Feedback Notification Box -->
+              <div id="form-feedback" class="form-feedback is-hidden" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimal Editorial Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <h3>Khayoon Alaayedi</h3>
+          <p>Space Technology &amp; AI Advocate &middot; Environmental &amp; Climate Activist &middot; Baghdad, Iraq</p>
+        </div>
+
+        <div class="footer-social-row">
+          <a href="https://www.linkedin.com/in/khayoon-a-6ab9482a3/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+            <img src="assets/linkedin.svg" alt="LinkedIn" width="16" height="16">
+          </a>
+          <a href="https://github.com/khion213" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+            <img src="assets/github.svg" alt="GitHub" width="16" height="16">
+          </a>
+          <a href="https://www.instagram.com/khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+            <img src="assets/instagram.svg" alt="Instagram" width="16" height="16">
+          </a>
+          <a href="https://www.youtube.com/@Khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+            <img src="assets/youtube.svg" alt="YouTube" width="16" height="16">
+          </a>
+          <a href="https://www.tiktok.com/@khayoon.alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok">
+            <img src="assets/tiktok.svg" alt="TikTok" width="16" height="16">
+          </a>
+          <a href="https://www.threads.com/@khayoon_alfayyadh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Threads">
+            <img src="assets/threads.svg" alt="Threads" width="16" height="16">
+          </a>
+          <a href="https://www.facebook.com/Khayoon.2050" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+            <img src="assets/facebook.svg" alt="Facebook" width="16" height="16">
+          </a>
+          <a href="https://t.me/khayoon2050" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Telegram">
+            <img src="assets/telegram.svg" alt="Telegram" width="16" height="16">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p>&copy; 2026 Khayoon Alaayedi. All rights reserved. Interdisciplinary Space &amp; Computing Portfolio.</p>
+        <button class="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Back to Top">
+          <span>Top of Orbit</span>
+          <span>&uarr;</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Bootstrap -->
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
